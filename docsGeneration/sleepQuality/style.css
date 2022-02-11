@@ -1,0 +1,53 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+
+#sleepQualityForm {
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.data {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(231, 118, 53);
+}
+
+#PG{
+  top: 1cm;
+  left: 10cm;
+  font-size: 3em;
+}
+
+#firstNameSleepQualityDisplay {
+  top: 6.35cm;
+  left: 12.5cm;
+}
+
+#lastNameSleepQualityDisplay {
+  top: 6.35cm;
+  left: 2.6cm;
+}
+
+#birthdaySleepQualityDisplay {
+  top: 7.3cm;
+  left: 6cm;
+}
+
+#weigthSleepQualityDisplay {
+  top: 7.3cm;
+  left: 12.5cm;
+}
+
+#higthSleepQualityDisplay {
+  top: 7.3cm;
+  left: 17.5cm;
+}
+
+#dateSleepQualityDisplay {
+  top: 3.45cm;
+  left: 16.7cm;
+}

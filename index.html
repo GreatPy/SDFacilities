@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDfacilities</title>
+</head>
+<body>
+  <form action="/" method="GET" id="form">
+    <div>
+      <label for="date">date</label>
+      <input type="text" name="date" id="date" >
+      <button class="copy" tabindex="-1" id="copyDateBtn">copier</button>
+    </div>
+    <div>
+      <label for="missions" class="hide">missions:</label><br>
+      <textarea name="missions" id="missions" class="hide" cols="60" rows="30">
+1.
+Prénom: Valérie
+Nom: ANTOINE
+Heure: 16:00-17:00
+Adresse: 92 Gd Rue Charles de Gaulle, 91250 Saintry-sur-Seine
+Tel: 0782708809
+Date de naissance: 31.05.1967
+Poids: 110
+Taille: 158
+Numéro sécurité sociale: 267057817409840
+
+2.
+Prénom: Aaron
+Nom: HENNEL
+Heure: 18:00-19:00
+Adresse: Haras de mes couille Rue du Moulin, 77670 Vernou-la-Celle-sur-Seine
+Tel: +33626374814
+Date de naissance: 23.12.1984
+Poids: N/A
+Taille: N/A
+Numéro sécurité sociale: 184127635117352
+      </textarea>
+      <button tabindex="-1" id="formGenerationBtn" class="hide">générer les formulaires</button>
+    </div>
+  </form>
+    <!-- 
+  <form action="/" method="GET" id="patientForm">
+    <div>
+      <label for="date">date</label>
+      <input type="text" name="date" id="date" value="">
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+        <label for="PG">N°PG</label>
+        <input type="text" name="PG" id="PG">
+        <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="firstName">prénom</label>
+      <input type="text" name="firstName" id="firstName">        
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="lastName">nom</label>
+      <input type="text" name="lastName" id="lastName">        
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="ID">ID</label>
+      <input type="text" name="ID" id="ID">
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="birthday">date de naissance</label>
+      <input type="text" name="birthday" id="birthday">
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="weight">poids</label>
+      <input type="text" name="weight" id="weight">
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div>
+      <label for="hight">taille</label>
+      <input type="text" name="hight" id="hight">
+      <button class="copy" tabindex="-1">copier</button>
+    </div>
+    <div id="docLabelGenerationBox">
+      <button id="docLabelGenerationBtn">+</button>
+      <div>
+        <label for="patientFolderLabel">dossier patient</label>
+        <input type="text" name="patientFolderLabel" id="patientFolderLabel">
+        <button class="copy" tabindex="-1">copier</button>
+      </div>
+      <div>
+        <label for="dailyFolderLabel">dossiers jour</label>
+        <input type="text" name="dailyFolderLabel" id="dailyFolderLabel">
+        <button class="copy" tabindex="-1">copier</button>
+      </div>
+    </div>
+    <button type="submit" id="docsGenerationBtn" class="submit">générer les documents</button>
+    <button type="reset" id="reset">reset</button>
+  </form> -->
+  <script type = "module" src="app.js"></script>
+</body>
+</html> 
