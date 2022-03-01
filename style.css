@@ -1,4 +1,267 @@
+.border{
+  border: black solid 1px;
+}
+
+
+.hidden{
+  display: none;
+}
+
 *{
   color:gray;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+.white{
+  color: white;
+}
+
+header{
+  height: 150px;
+  background-color:darkslategray;
+  display: flex;
+  justify-content: space-around;
+}
+
+#profilBox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+  #techProfilBtn{
+    background-color: beige;
+    height: 50px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+    
+  }
+
+  #techID{
+    padding: 10px;
+  }
+
+#consomablesBox{
+  width: 300px;
+  align-self: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  height: 140px;
+}
+
+  .consomableLine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+  }
+
+  .consomableBox{
+    display: flex;
+    align-items: center;
+  }
+
+  .consomable{
+    width: 80px;
+  }
+
+  .consomableCount{
+    width: 40px;
+  }
+
+  .consomableOrderBtn{
+    width: 100%;
+  }
+
+  .consomableOrderBtn{
+    color: white;
+    font-size: larger;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+  }
+
+  #receptionBtn{
+    width: 100%;
+    padding: 5px;
+    color: white;
+    font-size: larger;
+    background-color: rgb(6, 184, 6);
+    border: none;
+    border-radius: 5px;
+  }
+
+  .sent{
+    color: rgb(6, 184, 6);
+    text-align: center;
+  }
+
+#PGsBox{
+  width: 470px;
+  height:  140px;
+}
+
+  #legendPGs{
+    padding: 5px 0;
+    color: white;
+  }
+
+  .allPGsBox{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .onePGBox{
+    background-color: white;
+    width: 110px;
+    height: 115px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .onePGBox > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .onePGBox > div > div, .onePGBox > div > button {
+    margin-top:5px;
+    width: 100%;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .majBtn{
+      padding: 5px;
+      color: white;
+      background-color: rgb(6, 184, 6);
+      border: none;
+      border-radius: 5px;
+  }
+
+  .orderPilesBtn{
+      padding: 5px;
+      color: white;
+      font-size: 12px;
+      background-color: red;
+      border: none;
+      border-radius: 5px;
+  }
+
+#formTech{
+  display: flex;
+  background-color: rgb(158, 207, 207);
+  justify-content: space-around;
+  padding: 5px;
+}
+
+#formTech input {
+  width: 500px;
+  border:none;
+  border-radius: 2px;
+  height: 30px;
+}
+
+#formTechBox label{
+  display: inline-block;
+  width: 70px;
+  color: black
+}
+
+#saveBtn{
+  display: block;
+  width: 200px;
+  color: black;
+  margin: 5px;
+}
+
+.formLine{
+  padding: 5px;
+  height: 40px;
+}
+
+#addDeleteAdresseBox{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  transform: translate(80px); 
+}
+
+
+
+#rightSide{
+  display: flex;
+  justify-content: space-between;
+}
+
+#rightSide button{
+  font-size: 20px;
+  border: none;
+  color: white;
+  background-color:cornflowerblue;
+  border-radius:5px;
+}
+
+
+table{
+  width: 100%;
+  border: black solid 2px;
+  border-collapse: collapse;
+}
+th{
+  background-color:darkslategray;
+  color: white;
+  border: black solid 2px;
+  text-align: center;
+  height: 30px;
+}
+.rowName{
+  background-color:rgb(68, 82, 82);
+  color: white;
+}
+
+td{
+  border: black solid 2px;
+  text-align: center;
+  height: 30px;
+}
+
+#tableFooter{
+  height: 50px;
+  background-color: darkslategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tableFooter button{
+  padding: 5px;
+  color: white;
+  background-color: rgb(6, 184, 6);
+  border: none;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+table input{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border : none;
+}
+
+#map {
+  width: 100%;
+  height: 400PX;
+  border: solid black 10px;
+    }

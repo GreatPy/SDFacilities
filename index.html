@@ -5,38 +5,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SDfacilities</title>
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+    
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.4/dist/esri-leaflet.js"
+      integrity="sha512-oUArlxr7VpoY7f/dd3ZdUL7FGOvS79nXVVQhxlg6ij4Fhdc4QID43LUFRs7abwHNJ0EYWijiN5LP2ZRR2PY4hQ=="
+      crossorigin=""></script>
+    
+    <!-- Load Esri Leaflet Geocoder from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.1.1/dist/esri-leaflet-geocoder.css"
+      integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+      crossorigin="">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@3.1.1/dist/esri-leaflet-geocoder.js"
+      integrity="sha512-enHceDibjfw6LYtgWU03hke20nVTm+X5CRi9ity06lGQNtC9GkBNl/6LoER6XzSudGiXy++avi1EbIg9Ip4L1w=="
+      crossorigin=""></script>
+      <!-- smtpJS from CDN -->
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
+  <header>
+    <div class="box" id ="profilBox">
+      <button class="" id = "techProfilBtn">+</button>
+      <div class="white" id ="techID"></div>
+    </div>
+    
+    <div class="white box " id="consomablesBox">
+      
+      <div class="consomableLine ">
+        <div class="consomableBox "> 
+          <div class="consomable ">sangles :</div>
+          <div class="consomableCount " id="sangleCount">0</div>
+        </div>
+        <button class="consomableOrderBtn hidden" id="orderSanglesBtn">
+          commander
+        </button> 
+        
+        
+        <span class="sent hidden">commande envoyée</span>
+      </div>
+
+      <div class="consomableLine ">
+        <div class="consomableBox ">
+          <div class="consomable ">canule :</div>
+          <div class="consomableCount " id="canuleCount">0</div>
+        </div>
+        
+        <button class="consomableOrderBtn hidden" id="orderCanulesBtn">commander</button>
+        
+        <span class="sent hidden">commande envoyée</span>
+      </div>
+
+      <div class="consomableLine ">
+        <div class="consomableBox ">
+          <div class="consomable ">sparadra :</div>
+          <div class="consomableCount " id="sparadraCount">0</div>
+        </div>
+        
+        <button class="consomableOrderBtn hidden "id="orderSparadrasBtn">commander</button>
+        
+        <span class="sent hidden">commande envoyée</span>
+      </div>
+
+      
+      <button id = "receptionBtn">réception</button>
+    </div>
+
+    <div class="white box " id="PGsBox">
+      <div id="legendPGs">nombre d'utilisation des PGs avant épuisement des piles :</div>
+      <div class="allPGsBox ">
+
+        <div class="onePGBox ">
+          <div>
+            <div class="numberPG">PG1</div>
+            <div class="left">451</div>
+          </div>
+          <div>
+            <button class="majBtn">mise à jour</button>
+            <button class="orderPilesBtn hidden">commander</button>
+            <div class="sent hidden">commande <br /> envoyée</div>
+          </div>
+        </div>
+
+        <div class="onePGBox ">
+          <div>
+            <div class="numberPG">PG1</div>
+            <div class="left">451</div>
+          </div>
+          <div>
+            <button class="majBtn ">mise à jour</button>
+            <button class="orderPilesBtn ">commander</button>
+            <div class="sent hidden">commande <br /> envoyée</div>
+          </div>
+        </div>
+        
+        <div class="onePGBox ">
+          <div>
+            <div class="numberPG">PG1</div>
+            <div class="left">451</div>
+          </div>
+          <div>
+            <button class="majBtn">mise à jour</button>
+            <button class="orderPilesBtn hidden">commander</button>
+            <div class="sent ">commande <br /> envoyée</div>
+          </div>
+        </div>
+
+        <div class="onePGBox ">
+          <div>
+            <div class="numberPG">PG1</div>
+            <div class="left">451</div>
+          </div>
+          <div>
+            <button class="majBtn">mise à jour</button>
+            <button class="orderPilesBtn hidden">commander</button>
+            <div class="sent hidden">commande <br /> envoyée</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div id="formTechBox" >
+    <form id="formTech" action="/" method="GET" name = "formTech">
+      <div id="leftSide">  
+        <div class="formLine">
+          <label for="techLastname">nom :</label>
+          <input type="text" name="techLastname" id="techLastname">
+        </div>
+        <div class="formLine">
+          <label for="techFirstname">prénom :</label>
+          <input type="text" name="techFirstname" id="techFirstname">
+        </div>
+        <div class="formLine" >
+          <label for="techAdresse">adresse :</label>
+          <input type="text" name="techAdresse" id="techAdresse">
+        </div>
+      
+
+      <div id ="rightSide">
+        <button id="saveBtn">enregister</button>
+        <button id="cancelBtn" class="hidden">annuler</button>
+      </div>
+    </form>
+  </div>
+
+  <form id="consomableTableForm">
+    <table class="border">
+      <thead>
+        <th>consombales</th>
+        <th>quantité actuelle</th>
+        <th>quantité reçue</th>
+        <th>quantité après reception</th>
+      </thead>
+      <tr>
+        <td class="rowName">sangle </td>
+        <td id="sangleBefore" class="consomabelBefore">sangle 1</td>
+        <td id="sangleAdd" class="consomabelAdd">
+          <input type="number" min="0" name="sangleAddInput" id="sangleAddInput">
+        </td>
+        <td class="consomabelFinal">
+          <input type="number" min="0" name="sangleFinalInput" id="sangleFinalInput">
+        </td>
+      </tr>
+      <tr>
+        <td class="rowName">cannule </td>
+        <td id="canuleBefore" class="consomabelBefore">cannule 1</td>
+        <td id="canuleAdd" class="consomabelAdd">
+          <input type="number" min="0" name="canuleAddInput" id="canuleAddInput">
+        </td>
+        <td class="consomabelFinal">
+          <input type="number" min="0" name="canuleFinalInput" id="canuleFinalInput">
+        </td>
+      </tr>
+      <tr>
+        <td class="rowName">sparadra </td>
+        <td id="sparadraBefore" class="consomabelBefore">sparadra 1</td>
+        <td id="sparadraAdd" class="consomabelAdd">
+          <input type="number" min="0" name="sparadraAddInput" id="sparadraAddInput">
+        </td>
+        <td class="consomabelFinal">
+          <input type="number" min="0" name="sparadraFinalInput" id="sparadraFinalInput">
+        </td>
+      </tr>
+    </table>
+    <div id="tableFooter">
+      <button id="consomableValidationBtn">valider</button>
+    </div>
+  </form>
+    
+  
+
   <form action="/" method="GET" id="form">
     <div>
       <label for="date">date</label>
-      <input type="text" name="date" id="date" >
+      <input type="text" name="date" id="date" class="patientInput disabled" >
       <button class="copy" tabindex="-1" id="copyDateBtn">copier</button>
     </div>
     <div>
       <label for="missions" class="hide">missions:</label><br>
       <textarea name="missions" id="missions" class="hide" cols="60" rows="30">
-1.
-Prénom: Valérie
-Nom: ANTOINE
-Heure: 16:00-17:00
-Adresse: 92 Gd Rue Charles de Gaulle, 91250 Saintry-sur-Seine
-Tel: 0782708809
-Date de naissance: 31.05.1967
-Poids: 110
-Taille: 158
-Numéro sécurité sociale: 267057817409840
+1
+Prénom: Nabil
+Nom: HARIZI
+Heure: 18h - 18h30
+Adresse: 48 rue Danton, LE KREMLIN BICETRE
+Tel: 0627277340
+Naissance: 25/03/1997
+Poids: <poids>
+Taille: <taille>
+Sécu: 197037511235880
+Observations: 3e étage à droite
 
-2.
-Prénom: Aaron
-Nom: HENNEL
-Heure: 18:00-19:00
-Adresse: Haras de mes couille Rue du Moulin, 77670 Vernou-la-Celle-sur-Seine
-Tel: +33626374814
-Date de naissance: 23.12.1984
-Poids: N/A
-Taille: N/A
-Numéro sécurité sociale: 184127635117352
+2
+Prénom: Zakia
+Nom: BOUDOUDOUH
+Heure: 18h30 - 19h
+Adresse: 17 Avenue du Général de Gaulle, CLAMART
+Tel: 0680682199
+Naissance: 06/10/1984
+Poids: 57
+Taille: 163
+Sécu: 284107028501341
+Observations: 1er code 7526,
+2e code 9139, sonner à A303
+
+3
+Prénom: Jean
+Nom: BERRY
+Heure: 19h - 19h30
+Adresse: 39 bis rue Jules Vedrines, MALAKOFF
+Tel: 0675733180
+Naissance: 13/10/1983
+Poids: 80
+Taille: 178
+Sécu: 183109921900881
+Observations: appartement 8, 12e étage
+
+4
+Prénom: Khallil
+Nom: DRISSI
+Heure: 19h30 - 20h
+Adresse: 39 avenue de Verdun, CHATILLON
+Tel: 0781598366
+Naissance: 02/12/1984
+Poids: 85
+Taille: 179
+Sécu: 184127511404245
+Observations: 1er code 8246, puis Bâtiment C: 8213, puis interphone C102, 1er étage à gauche
       </textarea>
       <button tabindex="-1" id="formGenerationBtn" class="hide">générer les formulaires</button>
     </div>
